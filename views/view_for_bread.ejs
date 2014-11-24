@@ -10,7 +10,19 @@
 
   <body>
     <% theseDays.forEach(function(oneDay){ %>
-      
+      <div id='view-for-oneday'>
+        <h2 id='date-and-whichday'><%= oneDay[0] %>&nbsp;&nbsp<%= oneDay[1] %></h2>
+        <% oneDay.splice(0,2) %>
+        <div id='view-for-wap'>
+          <% oneDay.forEach(function(wap){ %>
+	    <div id='view-for-eachwap'>
+	      <p><img src='<%= wap[1] %>' alt='点击放大预览'></p>
+              <p><%= wap[0] %></p>
+              <p><%= wap[2] %>&nbsp;&nbsp;<%= wap[3] %></p>
+	    </div>
+          <% }) %>
+        </div>
+      </div> 
     <% }) %> 
   </body>
 </html>

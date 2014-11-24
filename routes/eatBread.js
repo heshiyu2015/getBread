@@ -33,8 +33,8 @@ router.get('/',function(req,res,next){
         var dataForpc = $(pc).find('div.photo-ctn>a');//找出分组中的文字和图片
         var time = $(pc).find('div.time').text();//图片文字的具体时间
         var address = $(pc).find('a.wp-poi-name>span').text();//图片文字的具体地点
-        pictureAndContent.push(dataForpc.attr('data-caption'));//装入文字图片
-        pictureAndContent.push(dataForpc.attr('href'));//装入文字图片
+        pictureAndContent.push(dataForpc.attr('data-caption'));//装入文字
+        pictureAndContent.push(dataForpc.attr('href'));//装入图片
         pictureAndContent.push(time);//装入具体时间
         pictureAndContent.push(address);//装入具体地址
         oneDay.push(pictureAndContent);//装入这一天数组中
