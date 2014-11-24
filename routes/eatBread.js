@@ -31,25 +31,24 @@ router.get('/',function(req,res,next){
       picAndCont.each(function(i,pc){
         var pictureAndContent = [];//装载这一天的图片和文字
         var dataForpc = $(pc).find('div.photo-ctn>a');//找出分组中的文字和图片
-//        var time = $('div.time').text();//图片文字的具体时间
-//        var address = $('a.wp-poi-name>span').text();//图片文字的具体地点
+        var time = $(pc).find('div.time').text();//图片文字的具体时间
+        var address = $(pc).find('a.wp-poi-name>span').text();//图片文字的具体地点
         pictureAndContent.push(dataForpc.attr('data-caption'));//装入文字图片
         pictureAndContent.push(dataForpc.attr('href'));//装入文字图片
-//        pictureAndContent.push(time);//装入具体时间
-//        pictureAndContent.push(address);//装入具体地址
-        console.log(pictureAndContent[0]);//Test
-        console.log(pictureAndContent[1]);//Test
-//        console.log(pictureAndContent[2]);//Test
-//        console.log(pictureAndContent[3]);//Test
+        pictureAndContent.push(time);//装入具体时间
+        pictureAndContent.push(address);//装入具体地址
         oneDay.push(pictureAndContent);//装入这一天数组中
       });
 
       theseDays.push(oneDay);//最后装入游记数组中
     });
-    res.writeHead(200,{'Content-Type':'text/plain;charset=utf-8'});
-    res.write(title);
-    res.write(author_img);
-    res.end(author_name);
+    res.render('view_for_bread',{
+      title:title,
+      author_img:author_img,
+      author_name:author_name,
+      num_of_days:num_of_days,
+      theseDays:theseDays
+    });
   }); 
 });
 
