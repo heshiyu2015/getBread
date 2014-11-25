@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title><%= title %></title>
-    <h1><%= title %></h1>
-    <h2><img src='<%= author_img %>' alt='<%= author_name %>'></h2>
-    <h2><%= author_name %></h2>
-    <h2><%= num_of_days %>天的快乐之旅</h2>
   </head>
 
   <body>
-    <% theseDays.forEach(function(oneDay){ %>
-      <div id='view-for-oneday'>
-        <h2 id='date-and-whichday'><%= oneDay[0] %>&nbsp;&nbsp<%= oneDay[1] %></h2>
-        <% oneDay.splice(0,2) %>
-        <div id='view-for-wap'>
-          <% oneDay.forEach(function(wap){ %>
-	    <div id='view-for-eachwap'>
-	      <p><img src='<%= wap[1] %>' alt='点击放大预览'></p>
-              <p><%= wap[0] %></p>
-              <p><%= wap[2] %>&nbsp;&nbsp;<%= wap[3] %></p>
-	    </div>
-          <% }) %>
-        </div>
-      </div> 
-    <% }) %> 
+    <div id='main' class='container'>
+      <div class='page-header'>
+				<h1 class='blog-title'><%= title %></h1>
+				<h2>
+					<span><img class='img-circle' src='<%= author_img %>' alt='<%= author_name %>'></span>
+					<span><%= author_name %></span>
+				</h2>
+				<h2><small><%= num_of_days %>天的快乐之旅</small></h2>
+      </div>
+			<% theseDays.forEach(function(oneDay){ %>
+				<div class='container' id='view-for-oneday'>
+					<h2 id='date-and-whichday'><%= oneDay[0] %>&nbsp;&nbsp<%= oneDay[1] %></h2>
+					<% oneDay.splice(0,2) %>
+					<div id='view-for-wap'>
+						<% oneDay.forEach(function(wap){ %>
+						<div class='jumbotron' id='view-for-eachwap'>
+							<p><img src='<%= wap[1] %>' class='thumbnail' alt='点击放大预览'></p>
+							<p><%= wap[0] %></p>
+							<p><small><%= wap[2] %></small>&nbsp;&nbsp;<small><%= wap[3] %></small></p>
+						</div>
+						<% }) %>
+					</div>
+				</div> 
+			<% }) %>
+			<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    </div>
   </body>
 </html>
