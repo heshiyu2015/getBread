@@ -1,14 +1,12 @@
 body {
   padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background:yellow;
 }
 
-div.eachwap {
-  text-align:center;
-  border:2px solid #a1a1a1;
-  background:yellow;
-  border-radius:25px;
+div#support {
+  position:relative;
+  left:300px; 
+  bottom:32px;
 }
 
 a {
