@@ -15,7 +15,7 @@ router.get('/',function(req,res,next){
       theseDays:data[4],
       comments:data[5]
     });
-  }); 
+  });
 });
 
 module.exports = router;
