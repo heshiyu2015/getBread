@@ -10,6 +10,11 @@ div#support {
   bottom:32px;
 }
 
+nav#nav-day {
+  position:relative;
+  left:350px;
+}
+
 a {
-  color: #00B7FF;
+  color:#ffffff;
 }

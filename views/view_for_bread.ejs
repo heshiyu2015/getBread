@@ -9,10 +9,10 @@
 
   <body data-spy="scroll" data-target='#nav-day'>
     <div id='main' class='container'>
-      <nav>
-        <a href="/html/index.asp">Home</a>
-        <a href="/html/html_intro.asp">Previous</a>
-        <a href="/html/html_elements.asp">Next</a>
+      <nav id='nav-day'>
+        <% for(var i=0;i<num_of_days;i++){ %>
+          <span class='label label-info'><a href="#date-and-whichday-第<%=i+1 %>天">第<%=i+1 %>天</a></span>
+        <% } %>
       </nav>
       <div class='page-header'>
 	<h1 class='blog-title'><%= title %></h1>
