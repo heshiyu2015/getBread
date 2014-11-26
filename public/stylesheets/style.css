@@ -10,9 +10,22 @@ div#support {
   bottom:32px;
 }
 
-nav#nav-day {
+div.container-fluid {
+  width:500px;
+  word-wrap:break-word;
+}
+
+div#content {
   position:relative;
-  left:350px;
+}
+
+nav#nav-day {
+  position:fixed !important; 
+  _position:absolute; 
+  top:10px; 
+  left:400px;
+  _top:expression(offsetParent.scrollTop+50);
+  z-index:10000;
 }
 
 a {

@@ -7,48 +7,53 @@
     <title><%= title %></title>
   </head>
 
-  <body data-spy="scroll" data-target='#nav-day'>
+  <body>
     <div id='main' class='container'>
       <nav id='nav-day'>
-        <% for(var i=0;i<num_of_days;i++){ %>
-          <span class='label label-info'><a href="#date-and-whichday-第<%=i+1 %>天">第<%=i+1 %>天</a></span>
-        <% } %>
-      </nav>
-      <div class='page-header'>
-	<h1 class='blog-title'><%= title %></h1>
-	<h2>
-	  <span><img class='img-circle' src='<%= author_img %>' alt='<%= author_name %>'></span>
-	  <span><%= author_name %></span>
-	</h2>
-	<h2><span class='glyphicon glyphicon-tags'></span>&nbsp;&nbsp;<small><%= num_of_days %>天的快乐之旅</small></h2>
-        <div id='support'>
-          <a class="label label-info"><span class='glyphicon glyphicon-leaf'><%= comments[0] %></a>
-          <a class="label label-info"><span class='glyphicon glyphicon-heart'><%= comments[1] %></a>
-          <a class="label label-info"><span class='glyphicon glyphicon-cloud'><%= comments[2] %></a>
+        <div class='container-fluid'>
+	  <% for(var i=0;i<num_of_days;i++){ %>
+	    <span class='label label-info'><a href="#date-and-whichday-第<%=i+1 %>天">第<%=i+1 %>天</a></span>
+	  <% } %>
         </div>
-      </div>
-      <% theseDays.forEach(function(oneDay){ %>
-	<div class='container' id='view-for-oneday'>
-	  <h2 id='date-and-whichday-<%= oneDay[1] %>'>
-            <span class='glyphicon glyphicon-tag'></span><%= oneDay[0] %>&nbsp;&nbsp<%= oneDay[1] %>
-          </h2>
-	  <% oneDay.splice(0,2) %>
-	  <div id='view-for-wap'>
-	    <% oneDay.forEach(function(wap){ %>
-	      <div class='jumbotron' id='view-for-eachwap'>
-		<p><img src='<%= wap[1] %>' class='thumbnail' alt='点击放大预览'></p>
-		<p><span class='glyphicon glyphicon-pencil'></span><%= wap[0] %></p>
-		<p><small><span class='glyphicon glyphicon-time'></span><%= wap[2] %></small>&nbsp;&nbsp;
-                <span class='glyphicon glyphicon-globe'></span><small><%= wap[3] %></small>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-heart'></span><%= wap[4] %>
-                &nbsp;&nbsp;<span class='glyphicon glyphicon-comment'></span><%= wap[5] %>
-                &nbsp;&nbsp;<span class='glyphicon glyphicon-cloud'></span><%= wap[6] %>
-                </p>
-	      </div>
-	    <% }) %>
+      </nav>
+      <div id='content' data-spy="scroll" data-target='#nav-day' data-offset='0' class='scrollspy-example'>
+	<div class='page-header'>
+	  <h1 class='blog-title'><%= title %></h1>
+	  <h2>
+	    <span><img class='img-circle' src='<%= author_img %>' alt='<%= author_name %>'></span>
+	    <span><%= author_name %></span>
+	  </h2>
+	  <h2><span class='glyphicon glyphicon-tags'></span>&nbsp;&nbsp;<small><%= num_of_days %>天的快乐之旅</small></h2>
+	  <div id='support'>
+	    <a class="label label-info"><span class='glyphicon glyphicon-leaf'><%= comments[0] %></a>
+	    <a class="label label-info"><span class='glyphicon glyphicon-heart'><%= comments[1] %></a>
+	    <a class="label label-info"><span class='glyphicon glyphicon-cloud'><%= comments[2] %></a>
 	  </div>
-        </div> 
+	</div>
+
+	<% theseDays.forEach(function(oneDay){ %>
+	  <div class='container' id='view-for-oneday'>
+	    <h2 id='date-and-whichday-<%= oneDay[1] %>'>
+	      <span class='glyphicon glyphicon-tag'></span><%= oneDay[0] %>&nbsp;&nbsp<%= oneDay[1] %>
+	    </h2>
+	    <% oneDay.splice(0,2) %>
+	    <div id='view-for-wap'>
+	      <% oneDay.forEach(function(wap){ %>
+		<div class='jumbotron' id='view-for-eachwap'>
+		  <p><img src='<%= wap[1] %>' class='thumbnail' alt='点击放大预览'></p>
+		  <p><span class='glyphicon glyphicon-pencil'></span><%= wap[0] %></p>
+		  <p><small><span class='glyphicon glyphicon-time'></span><%= wap[2] %></small>&nbsp;&nbsp;
+		  <span class='glyphicon glyphicon-globe'></span><small><%= wap[3] %></small>
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-heart'></span><%= wap[4] %>
+		  &nbsp;&nbsp;<span class='glyphicon glyphicon-comment'></span><%= wap[5] %>
+		  &nbsp;&nbsp;<span class='glyphicon glyphicon-cloud'></span><%= wap[6] %>
+		  </p>
+		</div>
+	      <% }) %>
+	    </div>
+	  </div> 
       <% }) %>
+      </div>
       <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
       <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     </div>
