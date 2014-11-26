@@ -19,11 +19,11 @@
       <div id='content' data-spy="scroll" data-target='#nav-day' data-offset='0' class='scrollspy-example'>
 	<div class='page-header'>
 	  <h1 class='blog-title'><%= title %></h1>
-	  <h2>
+	  <h2 class='author'>
 	    <span><img class='img-circle' src='<%= author_img %>' alt='<%= author_name %>'></span>
 	    <span><%= author_name %></span>
 	  </h2>
-	  <h2><span class='glyphicon glyphicon-tags'></span>&nbsp;&nbsp;<small><%= num_of_days %>天的快乐之旅</small></h2>
+	  <h2 class='author'><span class='glyphicon glyphicon-tags'></span>&nbsp;&nbsp;<small><%= num_of_days %>天的快乐之旅</small></h2>
 	  <div id='support'>
 	    <a class="label label-info"><span class='glyphicon glyphicon-leaf'><%= comments[0] %></a>
 	    <a class="label label-info"><span class='glyphicon glyphicon-heart'><%= comments[1] %></a>
@@ -33,7 +33,7 @@
 
 	<% theseDays.forEach(function(oneDay){ %>
 	  <div class='container' id='view-for-oneday'>
-	    <h2 id='date-and-whichday-<%= oneDay[1] %>'>
+	    <h2 id='date-and-whichday-<%= oneDay[1] %>' class='author'>
 	      <span class='glyphicon glyphicon-tag'></span><%= oneDay[0] %>&nbsp;&nbsp<%= oneDay[1] %>
 	    </h2>
 	    <% oneDay.splice(0,2) %>
