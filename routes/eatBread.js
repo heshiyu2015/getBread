@@ -11,7 +11,7 @@ router.get('/',function(req,res,next){
       title:data[0],
       author_img:data[1],
       author_name:data[2],
-      num_of_days:data[3],
+      whichday_for_head:data[3],
       theseDays:data[4],
       comments:data[5]
     });

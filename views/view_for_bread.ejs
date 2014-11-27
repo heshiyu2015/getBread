@@ -12,11 +12,11 @@
     <div id='main' class='container'>
       <nav id='nav-day'>
         <div class='container-fluid'>
-	  <% for(var i=0;i<num_of_days;i++){ %>
-	    <span class='label label-info'><a href="#date-and-whichday-第<%=i+1 %>天">第<%=i+1 %>天</a></span>
-	  <% } %>
+	  <% whichday_for_head.forEach(function(day){ %>
+	    <span class='label label-info'><a href="#date-and-whichday-第<%=day %>天">第<%=day %>天</a></span>
+	  <% }) %>
         </div>
-      </nav>
+      </nav>   
       <div id='content' data-spy="scroll" data-target='#nav-day' data-offset='0' class='scrollspy-example'>
 	<div class='page-header'>
 	  <h1 class='blog-title'><%= title %></h1>
@@ -24,7 +24,7 @@
 	    <span><img class='img-circle' src='<%= author_img %>' alt='<%= author_name %>'></span>
 	    <span><%= author_name %></span>
 	  </h2>
-	  <h2 class='author'><span class='glyphicon glyphicon-tags'></span>&nbsp;&nbsp;<small><%= num_of_days %>天的快乐之旅</small></h2>
+	  <h2 class='author'><span class='glyphicon glyphicon-tags'></span>&nbsp;&nbsp;<small><%= whichday_for_head[whichday_for_head.length-1] %>天的快乐之旅</small></h2>
 	  <div id='support'>
 	    <a class="label label-info"><span class='glyphicon glyphicon-leaf'><%= comments[0] %></a>
 	    <a class="label label-info"><span class='glyphicon glyphicon-heart'><%= comments[1] %></a>
@@ -47,7 +47,7 @@
 		  <span class='glyphicon glyphicon-globe'></span><small><%= wap[3] %></small>
 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-heart'></span><%= wap[4] %>
 		  &nbsp;&nbsp;<span class='glyphicon glyphicon-comment'></span><%= wap[5] %>
-<!--		  &nbsp;&nbsp;<span class='glyphicon glyphicon-cloud'></span><%= wap[6] %>  -->
+		  &nbsp;&nbsp;<span class='glyphicon glyphicon-cloud'></span><%= wap[6] %> 
 		  </p>
 		</div>
 	      <% }) %>
