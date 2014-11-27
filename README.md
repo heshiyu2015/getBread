@@ -28,6 +28,8 @@ https://secret-oasis-3521.herokuapp.com/api?id=2387754590
 
 4.推荐使用chrome浏览器
 
+5.代码一直使用github托管
+
 
 我的感受经历：
 1.在网上找到了cheerio这个nodejs模块，确立的基本的思路。
