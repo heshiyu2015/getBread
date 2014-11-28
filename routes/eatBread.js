@@ -13,7 +13,7 @@ router.get('/',function(req,res,next){
       author_name:data[2],
       whichday_for_head:data[3],
       theseDays:data[4],
-      comments:data[5]
+      comments:data[5] 
     });
   });
 });
